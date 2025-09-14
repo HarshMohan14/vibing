@@ -84,12 +84,36 @@ const Header: React.FC = () => {
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
                   >
-                    {(item.name === 'Domestic' ? domesticTrips : internationalTrips).map((trip) => (
-                      <a key={trip} href="#trips" className="dropdown-item">
-                        {trip}
-                      </a>
-                    ))}
-                    <a href="#all-trips" className="dropdown-item see-all">See All</a>
+                    {(item.name === 'Domestic' ? domesticTrips : internationalTrips).map((trip) => {
+                      let tripLink = '#trips';
+                      if (item.name === 'Domestic') {
+                        switch (trip) {
+                          case 'Leh Ladakh with Nubra & Pangong':
+                            tripLink = '#leh-ladakh';
+                            break;
+                          case 'Spiti Short Circuit via Chandrataal':
+                            tripLink = '#spiti-valley';
+                            break;
+                          case 'Kerala Backwaters & Hillscape Retreat':
+                            tripLink = '#kerala';
+                            break;
+                          case 'Andaman – Port Blair to Neil Island Exploration':
+                            tripLink = '#andaman';
+                            break;
+                          case 'Kashmir with Gulmarg & Pahalgam':
+                            tripLink = '#kashmir';
+                            break;
+                          default:
+                            tripLink = '#domestic';
+                        }
+                      }
+                      return (
+                        <a key={trip} href={tripLink} className="dropdown-item">
+                          {trip}
+                        </a>
+                      );
+                    })}
+                    <a href={item.name === 'Domestic' ? '#domestic' : '#all-trips'} className="dropdown-item see-all">See All</a>
                   </motion.div>
                 )}
               </AnimatePresence>

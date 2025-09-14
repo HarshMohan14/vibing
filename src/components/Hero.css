@@ -1,5 +1,4 @@
 .hero {
-  padding-top: 70px;
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   position: relative;
@@ -54,6 +53,8 @@
   height: 400px;
   object-fit: cover;
   display: block;
+  background-color: #f3f4f6;
+  min-height: 300px;
 }
 
 .gallery-nav {
@@ -147,6 +148,8 @@
   color: white;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  overflow-wrap: break-word;
   gap: 1.5rem;
 }
 
@@ -174,6 +177,9 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .trip-location {
@@ -452,6 +458,9 @@
   .trip-title {
     font-size: 1.5rem;
     line-height: 1.2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
   
   .amount {

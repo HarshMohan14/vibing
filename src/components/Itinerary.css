@@ -27,7 +27,9 @@
   color: #111827;
   margin: 0;
 }
-
+[data-theme="light"] .section-header h2 {
+    color: #111827;
+  }
 [data-theme="dark"] .section-header h2 {
   color: #f9fafb;
 }
